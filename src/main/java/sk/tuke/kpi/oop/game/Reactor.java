@@ -119,5 +119,4 @@ public class Reactor extends AbstractActor {   //toto je trieda
             this.damage = 0;
         }
     }
-
 }
