@@ -52,14 +52,23 @@ public class Reactor extends AbstractActor {
         // if temperature is >= 6000, then broken show reactor
         if (this.temperature >= 6000) {
             setAnimation(this.brokenAnimation);
+            this.damage = 100;
 
             // if (4000 <= temperature < 6000), then show hot reactor
         } else if (this.temperature >= 4000) {
             setAnimation(this.hotAnimation);
+            int damage = this.temperature / 40 - 50;
 
             // otherwise show normal reactor
         } else {
             setAnimation(this.normalAnimation);
+        }
+        // update damage
+        if (this.temperature > 2000 && this.temperature < 6000) {
+            int damage = this.temperature / 40 - 50;
+            if (this.damage < damage) {
+                this.damage = damage;
+            }
         }
     }
 }
