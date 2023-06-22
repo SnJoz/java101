@@ -12,8 +12,9 @@ public class Reactor extends AbstractActor {   //toto je trieda
     private Animation normalAnimation;
     private Animation hotAnimation;
     private Animation brokenAnimation;
+    private Animation offAnimation;
 
-    public Reactor() {   // toto je metoda - špecialna metoda a tato nič nevracia, služi na inicialkizáciu triedy
+    public Reactor() {   // toto je metoda (konstruktor)- špecialna metoda a tato nič nevracia, služi na inicialkizáciu triedy
         this.temperature = 0;
         this.state = false;  //členské permenneé patria objektu ktory sme vytvorili
         this.damage = 0;
@@ -35,8 +36,11 @@ public class Reactor extends AbstractActor {   //toto je trieda
             0.1F,
             Animation.PlayMode.LOOP_PINGPONG
         );
+
+        this.offAnimation = new Animation("sprites/reactor.png");
+
         // set init reactor animation
-        setAnimation(normalAnimation);
+        setAnimation(offAnimation);
     }
 
     public int getTemperature() {
