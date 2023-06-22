@@ -9,6 +9,7 @@ public class Reactor extends AbstractActor {
     private int temperature;
     private boolean state;
     private int damage;
+    private Light light;
     private Animation normalAnimation;
     private Animation brokenAnimation;
     private Animation hotAnimation;
@@ -152,5 +153,9 @@ public class Reactor extends AbstractActor {
 
     public boolean isRunning() {
         return this.state;
+    }
+
+    public void addLight(Light light){
+        this.light = light;
     }
 }
