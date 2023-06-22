@@ -108,7 +108,7 @@ public class Reactor extends AbstractActor {   //toto je trieda
         }
 
         // repair only if damage >0
-        if (this.damage > 0 || this.damage == 100) {
+        if (this.damage == 0 || this.damage == 100) {
             return;
         }
         // use hamer
